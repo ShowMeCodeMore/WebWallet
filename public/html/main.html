@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	</head>
+    <body>
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-md-6 offset-md-3">
+    				<br>
+    				<div class="alert alert-info" id="info" role="alert">
+  						创建或者使用已有的钱包
+					</div>
+    				<form>
+					    <div class="form-group">
+					        <label for="seed">输入12位的助记词</label>
+					        <input type="text" class="form-control" id="seed">
+					    </div>
+					    <button type="button" class="btn btn-primary" onclick="generate_addresses()">生成地址</button>
+					    <button type="button" class="btn btn-primary" onclick="generate_seed()">生成新助记词</button>
+					</form>
+					<hr>
+					<h2 class="text-xs-center">地址, 私钥 , 各地址余额</h2>
+					<ol id="list">
+					</ol>
+					<hr>
+    			</div>
+    		</div>
+    	</div>
+
+   		<script src="./web3.min.js"></script>
+   		<script src="./hooked-web3-provider.min.js"></script>
+    	<script src="./lightwallet.min.js"></script>
+    </body>
+</html>
+
+<script>
+    $(document).ready(function(){
+        console.log(window.location.href.split('?')[1])
+    })
+</script>
