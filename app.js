@@ -87,7 +87,8 @@ app.post('/login', function (req, res, next) {
 /*查询钱包主界面信息*/
 app.post('/toMain', function (req, res, next) {
     let updatestr = {username: req.body.username};
-    res.header("Access-Control-Allow-Origin", req.headers.origin);
+    res.header("Access-Control-Allow-Origin", "*");
+    // res.header("Access-Control-Allow-Origin", req.headers.origin);
     res.header("Access-Control-Allow-Credentials", "true");
     userSchema.find(updatestr, function(err, obj){
         if (err) {

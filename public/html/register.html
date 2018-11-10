@@ -36,6 +36,7 @@
             </div>
         </div>
     </form>
+
 </body>
 </html>
 <style>
@@ -46,7 +47,6 @@
 <script>
 
     let username;
-
     $(document).ready(function(){
         $("#login_submit").click(function(){
             username=$('#username').val();
@@ -70,6 +70,7 @@
             password: password,
             seedPhrase: seed
         }, function (err, ks) {
+            console.log(ks)
             let temp1 = ks.serialize();
             //发送ajax请求 使用post方式发送json字符串给后台login
             $.ajax({
